@@ -1,0 +1,395 @@
+{% extends 'base.html' %}}
+{% load static %}
+{% block title %} About
+{% endblock title %}
+{% block styling %}
+section{
+    padding: 100px;
+    margin-top:-5%;
+}
+titleText{
+    color: #111;
+    font-size: 2em;
+    font-weight: 300;
+
+}
+.titleText span{
+    color: #ff0157;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.team {
+
+    font-size: 1.5em;
+    font-weight: 400;
+    padding-left:10%;
+    //color: #ff0157;
+
+}
+
+.container{
+    margin-top: 30px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    place-items: center;
+}
+.card{
+    height: 290px;
+    background: white;
+    max-width: 350px;
+    margin: 0 20px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    transition: 0.4s;
+}
+.card:hover{
+     height:600px;
+     box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+}
+.card .img{
+    height: 200px;
+    width: 100%;
+}
+.card .img img{
+    height:100%;
+    width: 100%;
+    object-fit: cover;
+}
+.card .top-text{
+    padding: 5px;
+}
+.card .top-text .name{
+    font-size: 25px;
+    font-weight: 600;
+    color: #202020;
+}
+.card .top-text p{
+    font-size: 20px;
+    font-weight: 600;
+    color:#ff0157;
+    line-height: 20px;
+}
+.card .bottom-text{
+    padding: 0 20px 10px 20px;
+    margin-top: 5px;
+    background: white;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.1s;
+}
+.card:hover .bottom-text{
+    opacity: 1;
+    visibility: visible;
+}
+.card .bottom-text text{
+    text-align: justify;
+}
+.card .bottom-text .btn{
+    margin: 10px 0;
+    text-align:left;
+}
+.card .bottom-text .btn a{
+    text-decoration: none;
+    background:#ff0157;
+    color: white;
+    border-radius: 3px;
+    display: inline-flex;
+    transition:0.2s;
+}
+.card .bottom-text .btn a:hover{
+    transform: scale(0.9);
+}
+
+.icons {
+    size: 20px;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.icons a {
+    height: 50px;
+    width: 50px;
+    background-color: #f5f6fa;
+    border-radius: 35px;
+    text-align: center;
+    margin: 10px;
+    line-height: 60px;
+    box-shadow: 1px 4px 2px 2px #c9cddf;
+}
+
+.icons a i {
+    transition: all 0.3s linear;
+}
+
+.icons a:hover i {
+    transform: scale(1.4);
+}
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+
+.fa-github {
+    color:#0099CC
+}
+
+@media(max-width: 991px)
+{
+
+    section{
+        padding: 20px;
+    }
+
+    .title{
+        text-align: center;
+    }
+    .titleText{
+        font-size: 1.8em;
+        line-height: 1.5em;
+        margin-bottom: 15px;
+        font-weight: 300;
+    }
+}
+@media (max-width:480px){
+    .banner .content h2{
+        font-size: 2.2em;
+        color: #fff;
+    }
+    .container{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .card{
+        max-width: 700px;
+        margin: 20px 0;
+    }
+}
+@media screen and (max-width:978px){
+    .container{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .card{
+        max-width: 700px;
+        margin: 20px 0;
+    }
+}
+
+
+<!-- for footer   -->
+.footer1 {
+    width: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.959);
+    color: white;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+footer span {
+    text-align: center;
+}
+
+footer span,
+footer a {
+    padding-top: 25px;
+    margin-top: 20px;
+    margin-left: 18px;
+    margin-right: 18px;
+    margin-top: 100px;
+    padding-top: 2px;
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+}
+
+#middle {
+    padding-top: 30px;
+    padding-bottom: 15px;
+    font-size: 20px;
+    color: mediumpurple;
+
+}
+#heart p{
+    color: rgba(174, 172, 251, .62);
+    font-size: 18px;
+}
+
+footer a:hover {
+    color: lightgreen;
+}
+
+.icons {
+    size: 20px;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.icons a {
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    border-radius: 35px;
+    text-align: center;
+    margin: 10px;
+    line-height: 60px;
+    box-shadow: 0px 1px 2px 2px #c9cddf;
+}
+
+.icons a i {
+    transition: all 0.3s linear;
+}
+
+.icons a:hover i {
+    transform: scale(1.4);
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+#last {
+    color: white;
+    text-align: center;
+}
+
+
+
+{% endblock styling %}
+{% block aboutactive %}
+active
+{% endblock aboutactive%}
+{% block body %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<section class="about" id="about">
+                    <h2 class="titleText" style="text-align:center;"><span>A</span>bout Us</h2><br>
+                   <!-- <p>This website with a beautiful interface is a converter which helps you to construct the html commands
+                        that matches the page that you will design. You can use tools which are in-built in this website to
+                        make attractive html pages.
+                        The HyperText Markup Language, or HTML is the standard markup language for documents designed to be
+                        displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets and
+                        scripting languages such as JavaScript.
+                    </p>-->
+
+               <p style="font-family: Arial"><strong>T</strong>he HyperText Markup Language, or HTML is the standard markup language for documents designed to be displayed in a web browser. It can be assisted
+                    by technologies such as Cascading Style Sheets and scripting languages such as JavaScript.<br>
+                    This website, Html Converter.utils is with a beautiful interface is a converter which helps you to construct the html commands that matches the page that you will design.
+                    You can use tools which are in-built in this website to make attractive html pages. It allows the user to create and structure sections,
+                     paragraphs, headings, link etc. for web pages.<br><br>
+                     As an output the user will get two outputs, the Html file and the Css file in the proper order.
+                  </p>
+
+
+    <div class="team"><strong>Our Team</strong></div>
+
+
+                    <div class="container">
+            <div class="card">
+                <div class="img">
+                    <img src='{% static "Samarth1.jpeg" %}'>
+                </div>
+                <div class="top-text">
+                    <div class="name">Samarth Vyas</div>
+                    <p>Student</p>
+                </div>
+                <div class="bottom-text">
+                    <div class="text">I'm a tech-enthusiast, adaptable team player with problem-solving skills.<br>
+				I am interested in Web Development, loves to do code and also an open source contributor.
+                    </div>
+                    <div class="icons">
+
+                        <a href="https://github.com/samarthvyas11" target="blank"><i class="fa fa-2x fa-github"></i></a>
+                       <a href="www.linkedin.com/in/samarth-vyas-a901ab1b1" target="blank"><i class="fa fa-2x fa-linkedin"></i></a>
+                       </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img">
+                    <img src='{% static "Bhawna1.jpg" %}'>
+                </div>
+                <div class="top-text">
+                    <div class="name">Bhawna Gurjar</div>
+                    <p>Student</p>
+                </div>
+                <div class="bottom-text">
+                    <div class="text">I'm a tech-enthusiast, adaptable team player with problem-solving skills.<br>
+				I am interested in Web Development, loves to do code and also an open source contributor.
+                    </div>
+                    <div class="icons">
+
+
+                        <a href="https://github.com/bhawnagurjar27" target="blank"><i class="fa fa-2x fa-github"></i></a>
+                     <a href="https://www.linkedin.com/in/bhawnagurjar27" target="blank"><i class="fa fa-2x fa-linkedin"></i></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+
+<!-- for footer  -->
+<footer class="footer1" style="width: auto;
+margin-top: 0px;
+margin-bottom: 0px;
+padding-top: 10px;
+text-align: center;
+box-sizing: border-box;
+background-color: rgba(0, 0, 0, 0.959);
+color: white;
+font-size: 20px;
+font-family: 'Times New Roman', Times, serif;">
+    <p id="middle">Connect With Us</p>
+
+    <div class="icons">
+        <a href="https://www.linkedin.com/in/samarth-vyas-a901ab1b1" target="blank"><i class="fa fa-2x fa-linkedin" aria-hidden="true" style="background-color: black;"></i></a>
+        <a href="https://www.facebook.com/bhawna.gurjar.79" target="blank"><i class="fa fa-2x fa-facebook-square" aria-hidden="true"></i></a>
+        <a href="" target="blank"><i class="fa fa-2x fa-twitter" aria-hidden="true" style="background-color: black;"></i></a>
+        <a href="https://www.linkedin.com/in/bhawnagurjar27" target="blank"><i class="fa fa-2x fa-linkedin" aria-hidden="true" style="background-color: black;"></i></a>
+
+
+
+    </div>
+    <p id="last">Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2021 Html Converter.utils <br>All rights reserved.</p>
+
+   <div id="heart">
+            <p>Made in India with &#128151;</p>
+        </div>
+</footer>
+
+{% endblock body %}
+{% block scripting %}
+{% endblock scripting %}
