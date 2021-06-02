@@ -93,9 +93,9 @@ body{
 }
 
 {% endblock styling %}
-{% block editoractive %}
+{% block Editoractive %}
 active
-{% endblock editoractive%}
+{% endblock Editoractive%}
 {% block body %}
 {% if user.is_authenticated %}
 {% csrf_token %}
@@ -536,15 +536,18 @@ function clear_last()
  k1[0].style.display= "none";
  k2 = document.getElementsByClassName("output")
  
- /* k2[0].innerHTML="<a href='download' download>CLICK HERE TO DOWNLOAD</a>" */
- k2[0].style = 'width: 70vw;height: 82vh;border-style: solid;margin: auto;margin-top: 2%;display:block;'
+ 
+
+ k2[0].style = 'width: 70vw;height: 80vh;border-style: solid;margin: auto;margin-top: 1%;display:block; border-radius:12px;'
 
  original_string = "";
     for(var i = 0;i < elements.length;i++)
     {
         original_string = original_string + elements[i]
     }
-screen_frame = ' <div class="result_frame" style="width: 100%;position:relative; background-color:white;height: 82%;">'+ original_string + '</div>' + ' <div class="DC_button" style="width: 100%;height: 15%;background-color: chartreuse;position: relative;"><a '+ 'href="download" download ' +'style="position: absolute;left: 8%;width: 32%;height: 50%;top: 15%;text-align: center;color:black;font-size: 2vw;background-color: lightslategray;border-radius: 5%;"><i class="fa fa-download"></i> Download</a><button onclick="restore()" class="btn" style="position: absolute;left: 75%;top: 35%;"> Cancel  </button></div>'
+
+
+screen_frame = ' <div class="result_frame" style="width: 100%;position:relative; background-color:white;height: 85%;border-radius:10px;">'+ original_string + '</div>' + ' <div class="DC_button" style="width: 100%;height: 20%;background-color:chartreuse;position: relative;border-radius:5px;"><a '+ 'href="download" download ' +'style="position: absolute;left: 5%;width: 28%;height: 45%;top: 40%;text-align: center;color:black;font-size: 2vw;background-color: lightslategray;border-radius: 12px;"><i class="fa fa-download"></i> Download</a><button onclick="restore()" class="btn" style="position: absolute;left: 90%;top: 48%;border-radius:12px;"> <b>Cancel  </b></button></div>'
 
 k2[0].innerHTML = screen_frame;
 

@@ -26,10 +26,10 @@ def Contact1(request):
             contact = Contact(name=name,email=email,phone=phone,content=content)
             contact.save()
             messages.success(request,"Information successfully recorded")
-    return render(request,"contact1.html")
+    return render(request,"contact.html")
 
 def Editor(request):
-    return render(request,"editor3.html")        
+    return render(request,"editor.html")        
 
 def Login(request):
     print("locked in succesfully")   
