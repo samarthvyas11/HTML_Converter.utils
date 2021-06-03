@@ -26,7 +26,7 @@ SECRET_KEY = '%cmoed8s72qk7w+ouo5!m^8o8m2x3__*1*8it85%6x#^wngr!y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://htmlconverterutils.herokuapp.com']
 
 
 # Application definition
@@ -123,7 +123,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 import os
-# STATIC_ROOT = os.path.join(BASE_DIR,'static')
+STATIC_ROOT = os.path.join(BASE_DIR,'static') 
 STATIC_URL = '/static/'
 
 MESSAGE_TAGS = {
