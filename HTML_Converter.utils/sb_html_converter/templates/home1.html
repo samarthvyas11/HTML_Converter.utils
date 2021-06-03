@@ -493,8 +493,9 @@ form{
 {% endblock styling %}
 {% block homeactive%} active{% endblock homeactive%}
 {%block body%}
-<div class="img3">
-<img src='{% static "bg3.jpg" %}' >
+<div class="img3" style="background-color: black">
+<img src='{% static "home1.png" %}' >
+
 </div>
 <div class="container_main">
     <div class="left_side">
@@ -523,13 +524,7 @@ form{
 
 <section class="about" id="about">
                     <h2 class="titleText"><span>A</span>bout Us</h2><br>
-                    <!---<p>This website with a beautiful interface is a converter which helps you to construct the html commands
-                        that matches the page that you will design. You can use tools which are in-built in this website to
-                        make attractive html pages.
-                        The HyperText Markup Language, or HTML is the standard markup language for documents designed to be
-                        displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets and
-                        scripting languages such as JavaScript.
-                    </p>-->
+                    
 
 
                   <p style="font-family: Arial"><strong>T</strong>he HyperText Markup Language, or HTML is the standard markup language for documents designed to be displayed in a web browser. It can be assisted
@@ -599,7 +594,7 @@ form{
             <div class="title">
                 <h2 class="titleText" style="color: white;"><span>C</span>ontact Us</h2>
                 <marquee style="
-                color:white">For suggestion / problem with the designing / working of this site and further improvement, you may contact</marquee>
+                color:white">For suggestion / problem with the designing / working of this site and further improvement, you may contact.</marquee>
             </div>
             <form action="/Contact" method="post">
                 {% csrf_token %}
