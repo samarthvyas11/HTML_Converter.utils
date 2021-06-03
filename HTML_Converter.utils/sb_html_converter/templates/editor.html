@@ -514,7 +514,7 @@ function clear_last()
   result_HTML = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Converted_Page</title><style>.container{width: 100vw;height: 100vh;position: relative;}' + styling + '</style></head><body><div class="container">' + html + '</div></body></html>'
 
  hostname = location.hostname
- portname = location.portname
+ portname = location.port
  console.log(result_HTML)
  console.log(portname)
  console.log(hostname)
@@ -522,7 +522,7 @@ function clear_last()
  $.ajax({
             async: false,
             type: 'POST',
-            url: `http://${hostname}:8000/generate_file`,
+            url: `http://${hostname}:${portname}/generate_file`,
             data:{'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),'html_file':result_HTML} 
         
         })
@@ -547,7 +547,7 @@ function clear_last()
     }
 
 
-screen_frame = ' <div class="result_frame" style="width: 100%;position:relative; background-color:white;height: 85%;border-radius:10px;">'+ original_string + '</div>' + ' <div class="DC_button" style="width: 100%;height: 20%;background-color:chartreuse;position: relative;border-radius:5px;"><a '+ 'href="download" download ' +'style="position: absolute;left: 5%;width: 28%;height: 45%;top: 40%;text-align: center;color:black;font-size: 2vw;background-color: lightslategray;border-radius: 12px;"><i class="fa fa-download"></i> Download</a><button onclick="restore()" class="btn" style="position: absolute;left: 90%;top: 48%;border-radius:12px;"> <b>Cancel  </b></button></div>'
+screen_frame = ' <div class="result_frame" style="width: 100%;position:relative; background-color:white;height: 85%;border-radius:10px;">'+ original_string + '</div>' + ' <div class="DC_button" style="width: 100%;height: 20%;background-color:chartreuse;position: relative;border-radius:5px;"><a '+ 'href="Converted_HTML" download ' +'style="position: absolute;left: 5%;width: 28%;height: 45%;top: 40%;text-align: center;color:black;font-size: 2vw;background-color: lightslategray;border-radius: 12px;"><i class="fa fa-download"></i> Download</a><button onclick="restore()" class="btn" style="position: absolute;left: 90%;top: 48%;border-radius:12px;"> <b>Cancel  </b></button></div>'
 
 k2[0].innerHTML = screen_frame;
 

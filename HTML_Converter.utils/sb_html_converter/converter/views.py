@@ -16,7 +16,7 @@ from django.utils.encoding import force_bytes
 import os
 # Create your views here.
 def home(request):
-    return render(request,"home1.html")
+    return render(request,"home.html")
 
 def About(request):
     return render(request,"about.html")
