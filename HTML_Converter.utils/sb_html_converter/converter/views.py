@@ -92,14 +92,16 @@ def logout_id(request):
 def generate_html(request):
     if request.method == "POST":
         data = request.POST["html_file"]
-    f = open('templates/helloworld.html','w')
+    print(request.user.username)    
+    print("hello this is samarth vyas")
+    f = open('templates/'+str(request.user.username)+'.html','w')
     f.write(data)
     f.close()
     
     return HttpResponse(str("helloworld.html"))
 
 def download(request):
-    return render(request,"helloworld.html")  
+    return render(request,str(request.user.username)+".html")  
 
 
 
@@ -116,12 +118,12 @@ def password_reset_request(request):
 					email_template_name = "main/password_reset_email.txt"
 					c = {
 					"email":user.email,
-					'domain':'127.0.0.1:8000',
+					'domain':'htmlconverterutilsapp.herokuapp.com',
 					'site_name': 'HTML Converter.utils',
 					"uid": urlsafe_base64_encode(force_bytes(user.pk)),
 					"user": user,
 					'token': default_token_generator.make_token(user),
-					'protocol': 'http',
+					'protocol': 'https',
 					}
 					email = render_to_string(email_template_name, c)
 					try:

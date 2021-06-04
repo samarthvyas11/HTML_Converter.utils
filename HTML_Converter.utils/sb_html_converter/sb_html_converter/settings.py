@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 from django.contrib.messages import constants as messages
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +27,7 @@ SECRET_KEY = '%cmoed8s72qk7w+ouo5!m^8o8m2x3__*1*8it85%6x#^wngr!y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://htmlconverterutils.herokuapp.com']
+ALLOWED_HOSTS = ['htmlconverterutilsapp.herokuapp.com']
 
 
 # Application definition
@@ -123,7 +124,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 import os
-STATIC_ROOT = os.path.join(BASE_DIR,'static') 
+STATIC_ROOT = os.path.join(BASE_DIR,'converter/static') 
 STATIC_URL = '/static/'
 
 MESSAGE_TAGS = {
@@ -137,3 +138,5 @@ EMAIL_HOST_USER = 'svsamarth1123@gmail.com'
 EMAIL_HOST_PASSWORD ='mcnljaxsokqejdjr'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+django_heroku.settings(locals())

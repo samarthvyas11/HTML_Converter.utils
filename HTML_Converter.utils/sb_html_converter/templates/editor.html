@@ -515,14 +515,15 @@ function clear_last()
 
  hostname = location.hostname
  portname = location.port
- console.log(result_HTML)
- console.log(portname)
- console.log(hostname)
+ protocol = location.protocol
+
+ 
  var d1
  $.ajax({
             async: false,
             type: 'POST',
-            url: `http://${hostname}:${portname}/generate_file`,
+            url: `${protocol}//${hostname}:${portname}/generate_file`,
+            
             data:{'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),'html_file':result_HTML} 
         
         })
