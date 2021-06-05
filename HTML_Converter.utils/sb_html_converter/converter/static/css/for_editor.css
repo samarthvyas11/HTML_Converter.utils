@@ -1,0 +1,137 @@
+body{
+    background-image: url( /static/editorbg.jpg );
+    background-repeat: no-repeat;
+    background-size:1600px 800px;
+    overflow:hidden;
+}
+.container1{
+    width: 100vw;
+    height: 90vh;
+    position: relative;
+    overflow:hidden;
+}
+.frame{
+    width: 70%;
+    height: 100%;
+    display:inline-block;
+    border: 5px solid #000000;
+    background-color:white;
+    position:relative;
+    border-radius: 12px;
+
+}
+.button_bar{
+    height: 68%;
+    width: 12%;
+    display: inline-block;
+    vertical-align: top;
+    border: solid black;
+    background-color:white;
+    border-radius:4%;
+    padding:2%;
+    margin-left:0.5%;
+    margin-top:4%;
+    color:solid black;
+
+}
+
+.sub_button{
+    display: inline-block;
+    width: 12%;
+    height: 59%;
+    vertical-align: top;
+    border-radius:12px;
+
+}
+
+.side_box{
+    border:solid black;
+    border-radius:12px;
+    padding:2%;
+    background-color:white;
+
+}
+.at_center{
+    height: 50%;
+    width: 79%;
+    padding: 10%;
+    font-size: 4vw;
+}
+.create_html{
+    //margin-top: 31%;
+    width: 20vw;
+    height: 7vh;
+    border-radius: 12px;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+    margin: 2px -14px;
+    cursor: pointer;
+}
+.create_html:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.check_button{
+    cursor:pointer;
+}
+.check_button:hover{
+    background-color: #ccc;
+
+}
+.output{
+    display:none;
+}
+
+
+
+@media(max-width: 991px)
+{
+.container1{
+overflow:auto;
+}
+.button_bar{
+  height:auto;
+  width:auto;
+}
+}
+@media (max-width:480px){
+.container1{
+overflow:auto;
+}
+
+.button_bar{
+
+   height:auto;
+   width:auto;
+
+}
+.frame{
+    position:relative;
+}
+}
+@media (max-width:1048px){
+.button_bar{
+   height:auto;
+   width:auto;
+}
+}
+
+@media screen and (max-width:978px){
+.container1{
+overflow:auto;
+}
+
+.button_bar{
+   height:auto;
+   width:auto;
+}
+.frame{
+    position:relative;
+
+}
+}

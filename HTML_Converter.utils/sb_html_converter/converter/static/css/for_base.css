@@ -1,0 +1,18 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    margin:0%;
+    padding:0%;
+    background-repeat: no-repeat;
+  
+   
+    
+  }
+  nav{
+    background-color: transparent;
+    
+  }
+  
+  .navbar li.active {
+     border-bottom: 3px solid red;
+    }

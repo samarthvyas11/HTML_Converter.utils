@@ -11,36 +11,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Converter</title>
     <link rel="icon" href="static/icon.jpeg">
-    <style>
-      body{
-        width: 100vw;
-        height: 100vh;
-        margin:0%;
-        padding:0%;
-        /* overflow: hidden; */
-        background-repeat: no-repeat;
-        /* background-image: url( {% static "bg3.jpg" %} ); */
-       
-        
-      }
-      nav{
-        background-color: transparent;
-        
-      }
-      .navbar li.active {
-         border-bottom: 3px solid red;
-        }
-      
-       {% block styling %}
-
-       {% endblock styling %}
-       
-    </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/for_base.css' %}">
+  
+    {% block link %}
+    {% endblock link %}
+    
   </head>
   <body >
     <nav class="navbar navbar-expand-lg navbar-light" >
         <div class="container-fluid">
-          <a class="navbar-brand"  href="/"><b>HTML Converter.utils</b></a>
+          <a class="navbar-brand" style="color: rgb(214, 148, 26);" href="/"><b>HTML Converter.utils</b></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -94,7 +74,10 @@
 
 
       {%for message in messages %}
-      <div class=" alert-{{ message.tags}} alert-dismissible fade show" role="alert">
+      <div class=" alert-{{ message.tags}} alert-dismissible fade show" style="width: 30%;
+      margin: auto;
+      border-radius: 2%;
+      padding: 1%;" role="alert">
         <strong>Message : </strong> {{message}}
        
       </div>
@@ -207,6 +190,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>  
 <script src='{% static "jquery.js" %}'></script>
+
 </body>
   <script>
 
