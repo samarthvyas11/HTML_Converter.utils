@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '%cmoed8s72qk7w+ouo5!m^8o8m2x3__*1*8it85%6x#^wngr!y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['htmlconverterutilsapp.herokuapp.com']
 
