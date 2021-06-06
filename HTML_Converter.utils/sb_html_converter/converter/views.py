@@ -13,7 +13,9 @@ from django.db.models.query_utils import Q
 from django.utils.http import urlsafe_base64_encode
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
+from django.contrib.auth import get_user_model
 import os
+
 # Create your views here.
 def home(request):
     return render(request,"home.html")
@@ -65,24 +67,29 @@ def Sign(request):
         lname = request.POST["lname"]
         pass1 = request.POST["pass1"]
         pass2 = request.POST["pass2"]
-
-        if not username.isalnum():
-            messages.error(request, " User name should only contain letters and numbers")
-            return redirect('home')
-        if (pass1!= pass2):
-             messages.error(request, " Passwords do not match")
-             return redirect('home')
+        try:
         
-        # Create the user
-        myuser = User.objects.create_user(username,email,pass1)
-        myuser.first_name = fname
-        myuser.last_name = lname
-        myuser.save()
-        messages.success(request,"You have successfully created your account")
+            if not username.isalnum():
+                messages.error(request, " User name should only contain letters and numbers")
+                return redirect('home')
+            if (pass1!= pass2):
+                messages.error(request, " Passwords do not match")
+                return redirect('home')
+            
+            # Create the user
+            myuser = User.objects.create_user(username,email,pass1)
+            myuser.first_name = fname
+            myuser.last_name = lname
+            myuser.save()
+            messages.success(request,"You have successfully created your account")
+        except:
+            messages.error(request, "User Name already exist")
+            return redirect('home')
+
 
       else:
         print("404- Not Found")    
-      return redirect('home')
+        return redirect('home')
 def logout_id(request):
     logout(request)
     messages.success(request,"Successfully Logged out") 
